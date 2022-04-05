@@ -70,7 +70,7 @@ namespace The_Outer_Worlds_Trainer
 				SetNoclip(ShouldNoclip);
 			}
 
-			if((float)mem.Watchers["gameSpeed"].Current != SelectedGameSpeed)
+			if(!(bool)mem.Watchers["ttdActive"].Current && (float)mem.Watchers["gameSpeed"].Current != SelectedGameSpeed)
 			{
 				SetGameSpeed(SelectedGameSpeed);
 			}

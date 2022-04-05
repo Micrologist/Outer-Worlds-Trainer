@@ -91,6 +91,8 @@ namespace The_Outer_Worlds_Trainer
 			DeepPointer collisionEnabledPtr = new DeepPointer(characterBase, 0x9C);
 			DeepPointer vLookPtr = new DeepPointer(characterBase, 0x3C0, 0x3F0);
 			DeepPointer hLookPtr = new DeepPointer(characterBase, 0x3C0, 0x3F4);
+			DeepPointer ttdActivePtr = new DeepPointer(characterBase, 0x1470, 0x1A0);
+
 			DeepPointer gameSpeedPtr = new DeepPointer(worldBase, 0x38, 0x270, 0x518);
 
 			Watchers = new MemoryWatcherList() {
@@ -110,6 +112,7 @@ namespace The_Outer_Worlds_Trainer
 				new MemoryWatcher<float>(jumpApexPtr) { Name = "jumpApex" },
 				new MemoryWatcher<float>(vLookPtr) { Name = "vLook" },
 				new MemoryWatcher<float>(hLookPtr) { Name = "hLook" },
+				new MemoryWatcher<bool>(ttdActivePtr) { Name = "ttdActive" },
 				new MemoryWatcher<float>(gameSpeedPtr) { Name = "gameSpeed" }
 			};
 
