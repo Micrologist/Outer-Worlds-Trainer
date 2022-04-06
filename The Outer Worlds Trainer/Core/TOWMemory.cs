@@ -1,9 +1,10 @@
-﻿using System;
+﻿using MemUtil;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text.RegularExpressions;
-using MemUtil;
+using System.Threading;
 
 namespace The_Outer_Worlds_Trainer
 {
@@ -20,6 +21,7 @@ namespace The_Outer_Worlds_Trainer
 			{
 				IsInitialized = false;
 				Hook();
+				Thread.Sleep(1000);
 				return false;
 			}
 
@@ -180,7 +182,7 @@ namespace The_Outer_Worlds_Trainer
 
 			SigScanTarget pattern = new SigScanTarget("FF 90 ?? ?? ?? ?? 48 8B C8 E8 ?? ?? ?? ?? 84 C0 74 15 48 8B 05 ?? ?? ?? ?? 48 85 C0 48 0F 44 C3");
 			IntPtr codeLocation = scanner.Scan(pattern);
-			if(codeLocation == IntPtr.Zero)
+			if (codeLocation == IntPtr.Zero)
 			{
 				result = codeLocation;
 				return false;

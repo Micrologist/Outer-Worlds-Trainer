@@ -37,7 +37,7 @@ namespace The_Outer_Worlds_Trainer
 		{
 			do
 			{
-				if(mem.UpdateState())
+				if (mem.UpdateState())
 				{
 					UpdateUIValues();
 					SetGameState();
@@ -48,29 +48,29 @@ namespace The_Outer_Worlds_Trainer
 
 		private void SetGameState()
 		{
-			if(ShouldStore)
+			if (ShouldStore)
 			{
 				ShouldStore = false;
 				StorePosition();
 			}
 
-			if(ShouldTeleport)
+			if (ShouldTeleport)
 			{
 				ShouldTeleport = false;
 				Teleport();
 			}
 
-			if(!ShouldNoclip && (bool)mem.Watchers["godMode"].Current != ShouldGod)
+			if (!ShouldNoclip && (bool)mem.Watchers["godMode"].Current != ShouldGod)
 			{
 				SetGod(ShouldGod);
 			}
 
-			if(IsBitSet((byte)mem.Watchers["cheatFlying"].Current, 2) != ShouldNoclip)
+			if (IsBitSet((byte)mem.Watchers["cheatFlying"].Current, 2) != ShouldNoclip)
 			{
 				SetNoclip(ShouldNoclip);
 			}
 
-			if(!(bool)mem.Watchers["ttdActive"].Current && (float)mem.Watchers["gameSpeed"].Current != SelectedGameSpeed)
+			if (!(bool)mem.Watchers["ttdActive"].Current && (float)mem.Watchers["gameSpeed"].Current != SelectedGameSpeed)
 			{
 				SetGameSpeed(SelectedGameSpeed);
 			}
@@ -126,7 +126,7 @@ namespace The_Outer_Worlds_Trainer
 			float flySpeed, acceleration;
 			bool godMode;
 
-			if(b)
+			if (b)
 			{
 				movementMode = 5;
 				flySpeed = 5000f;
